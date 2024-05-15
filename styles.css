@@ -1,0 +1,143 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px 0;
+    z-index: 10;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: #555;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.content {
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+}
+
+.section.active .content {
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+.section.active h1, .section.active h2, .section.active h3 {
+    animation: popIn 1s ease forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.profile-img {
+    max-width: 100%;
+    max-height: 300px; /* Adjust the maximum height as needed */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+#navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Align items at the center */
+}
+
+#navbar ul li {
+    margin: 0 50px; /* Adjust as needed */
+}
+
+@media (max-width: 768px) {
+    .contact-button {
+        margin-top: 0px; /* Adjust as needed */
+    }
+}
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    clear: both; /* Add this to clear floats */
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
